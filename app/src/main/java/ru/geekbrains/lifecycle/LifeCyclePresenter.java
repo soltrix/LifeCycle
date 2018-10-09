@@ -12,14 +12,16 @@ public final class LifeCyclePresenter {
     // внутреннее поле, хранящее единственный экземпляр объекта
     private static LifeCyclePresenter instance = null;
 
-    // счетчик
+    // Это наш счетчик
     private int counter;
 
-    private LifeCyclePresenter() {
+    // Конструктор (вызывать извне его нельзя, поэтому он приватный)
+    private LifeCyclePresenter(){
         counter = 0;
     }
 
-    public void incrementCounter() {
+    // Увеличение счетчика
+    public void incrementCounter(){
         counter++;
     }
 
@@ -27,11 +29,14 @@ public final class LifeCyclePresenter {
         return counter;
     }
 
-    // Метод, который возвращает экземпляр объекта; если объекта нет, то создаем его
-    public static LifeCyclePresenter getInstance() {
-        // Здесь реализована "ленивая" (lazy) инициализация объекта
-        // т.е., пока объект не нужен, создавать его не будем
-        if (instance == null) instance = new LifeCyclePresenter();
+    // Метод, который возвращает экземпляр объекта.
+    // Если объекта нет, то создаем его.
+    public static LifeCyclePresenter getInstance(){
+        // Здесь реализована «ленивая» инициализация объекта,
+        // то есть, пока объект не нужен, не создаем его.
+        if (instance == null){
+            instance = new LifeCyclePresenter();
+        }
         return instance;
     }
 }

@@ -3,4 +3,7 @@
     <string name="text1">Демонстрация жизненного цикла Activity</string>
     <string name="text2">TextView</string>
     <string name="button">Button</string>
+    <string name="button2">Добавить</string>
+    <string name="button3">Удалить</string>
+    <string name="fragment1">Фрагмент</string>
 </resources>
